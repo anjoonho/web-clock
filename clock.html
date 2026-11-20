@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web-clock</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <main class="clock">
+      <div class="battery">배터리: <span id="battery">100</span>%</div>
+      <p id="warning" class="hidden">배터리가 15% 이하입니다!</p>
+
+      <div id="clockScreen" class="screen">
+        <div id="date">0000-00-00</div>
+        <div id="time">00:00:00</div>
+      </div>
+
+      <form id="alarmForm">
+        <input type="number" id="hour" min="0" max="23" placeholder="시" required />
+        <input type="number" id="minute" min="0" max="59" placeholder="분" required />
+        <input type="number" id="second" min="0" max="59" placeholder="초" required />
+        <button type="submit">추가</button>
+      </form>
+
+      <ul id="alarmList"></ul>
+    </main>
+
+    <!-- 팝업창이 떠도 배터리 감소가 멈추지 않음) -->
+    <div id="lowBatteryPopup" class="popup hidden">
+      <div class="popup-box">
+        <p>배터리가 15% 이하입니다!</p>
+        <button type="button" id="closePopupBtn">확인</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
